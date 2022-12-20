@@ -19,7 +19,9 @@ router.delete('/:id',userController.deleteUser);
 // **get user
 router.get('/:id',userController.getUser);
 // **follow user
+router.patch('/follow/:id',userController.followUser);
 // **unfollow user
+router.patch('/unfollow/:id',userController.unfollowUser);
 
 
 module.exports = router;

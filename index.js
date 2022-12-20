@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const userRoutes = require('./routes/users.routes');
+const postRoutes = require('./routes/post.routes');
 const { connect } = require('mongoose');
 const { connectToDB } = require('./config/db');
 require('./config/db');
@@ -26,6 +27,8 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/users',userRoutes);
+app.use('/api/posts',postRoutes);
+
 
 app.listen(process.env.PORT,async ()=>{
     await connectToDB();
